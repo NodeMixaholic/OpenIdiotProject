@@ -1,43 +1,37 @@
-async function main() {
-var xOffset = 15;
-var yOffset = 15;
-var xPos = 350;
-var yPos = -75;
-
-
 async function bouncy(win) {
     while (true) {
-        xPos += xOffset;
-        yPos += yOffset;
-        if (xPos > screen.width-175){
-            xOffset = Math.ceil( (6 * -1) * Math.random()) * 5 - 10 ;
-            win.focus()
-        }
-        if (xPos < 0){
-            xOffset = Math.ceil(8 * Math.random())  * 5 - 10 ;
-        }
-        if (yPos > screen.height-100){
-            yxOffset = Math.ceil( (6 * -1) * Math.random())  * 5 - 10 ;
-        }
-        if (yPos < 0){
-            yxOffset = Math.ceil( 8 * Math.random())  * 5 - 10 ;
-        }
-        win.moveTo(xPos,yPos);
-        await new Promise(r => setTimeout(r, 1000)); //wait a second so we dont *completely* crash. ;)
+    await new Promise(r => setTimeout(r, 500)); //wait a second so we dont *completely* crash. ;)
+    let xOffset = 15;
+    let yOffset = 15;
+    let xPos = 350;
+    let yPos = -75;
+    xPos += xOffset;
+    yPos += yOffset;
+    if (xPos > screen.width-175){
+        xOffset = Math.ceil( (6 * -1) * Math.random()) * 5 - 10 ;
+        win.focus()
+    }
+    if (xPos < 0){
+        xOffset = Math.ceil(8 * Math.random())  * 5 - 10 ;
+    }
+    if (yPos > screen.height-100){
+        yxOffset = Math.ceil( (6 * -1) * Math.random())  * 5 - 10 ;
+    }
+    if (yPos < 0){
+        yxOffset = Math.ceil( 8 * Math.random())  * 5 - 10 ;
+    }
+    try {
+    win.moveTo(xPos,yPos);
+    } catch {
+    console.log("FEATURE NOT SUPPORTED: BOUNCY")
+    }
     }
 }
 
+async function main() {
+
 async function replicator() {
-    let win = window.open("index.html", "_blank",'location=no,height=200,width=200,scrollbars=yes,status=yes,toolbar=no')
-    try {
-        try {
-            bouncy(window)
-        } catch {
-            bouncy(win)
-        }
-    } catch {
-        console.log("FEATURE NOT SUPPORTED: BOUNCY")
-    }
+    window.open("index.html", "_blank",'location=no,height=200,width=200,scrollbars=yes,status=yes,toolbar=no')
 }
 
 
@@ -73,6 +67,11 @@ window.addEventListener('beforeunload',(event) => {
 async function changeHTMLToIdiot() {
     document.getElementsByTagName("body")[0].innerHTML = `<video src="thirdparty/idiot.mp4" autoplay="true" loop="true" width="100%" height="100%"></video>`
     main();
+    try {
+        bouncy(window)
+    } catch {
+        console.log("FEATURE NOT SUPPORTED: BOUNCY")
+    }
 }
 
 function getAPPerm() {
