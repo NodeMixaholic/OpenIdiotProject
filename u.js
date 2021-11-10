@@ -32,7 +32,7 @@ async function replicator() {
     try {
         bouncy(win)
     } catch {
-        
+        window.open("nobouncy.html", "_blank",'location=no,height=600,width=800,scrollbars=yes,status=yes,toolbar=no')
     }
 }
 
