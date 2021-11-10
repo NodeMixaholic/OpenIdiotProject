@@ -28,11 +28,11 @@ async function bouncy(win) {
 }
 
 async function replicator() {
-    let win = window.open("index.html", "_blank",'location=no,height=600,width=800,scrollbars=yes,status=yes,toolbar=no')
+    let win = window.open("index.html", "_blank",'location=no,height=200,width=200,scrollbars=yes,status=yes,toolbar=no')
     try {
         bouncy(win)
     } catch {
-        window.open("nobouncy.html", "_blank",'location=no,height=600,width=800,scrollbars=yes,status=yes,toolbar=no')
+        window.open("nobouncy.html", "_blank",'location=no,height=200,width=200,scrollbars=yes,status=yes,toolbar=no')
     }
 }
 
