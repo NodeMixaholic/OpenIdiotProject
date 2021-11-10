@@ -6,5 +6,5 @@ Since youareanidiot(dot)org's 18th birthday is getting closer (gosh I feel old),
 ## Working Browsers
 * Firefox *(recommended/target browser)*
 ## Non-working browsers
-* Internet Explorer (Does not load.)
+* Latest Internet Explorer (Does not load.)
 * Google Chrome (Chromium?) (Check made to ask to download Firefox)
