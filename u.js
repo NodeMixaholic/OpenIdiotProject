@@ -30,9 +30,13 @@ async function bouncy(win) {
 async function replicator() {
     let win = window.open("index.html", "_blank",'location=no,height=200,width=200,scrollbars=yes,status=yes,toolbar=no')
     try {
-        bouncy(win)
+        try {
+            bouncy(window)
+        } catch {
+            bouncy(win)
+        }
     } catch {
-        window.open("nobouncy.html", "_blank",'location=no,height=200,width=200,scrollbars=yes,status=yes,toolbar=no')
+        console.log("FEATURE NOT SUPPORTED: BOUNCY")
     }
 }
 
