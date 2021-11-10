@@ -1,10 +1,10 @@
+var xOffset = 15;
+var yOffset = 15;
+var xPos = 350;
+var yPos = -75;
 async function bouncy(win) {
     while (true) {
     await new Promise(r => setTimeout(r, 500)); //wait a second so we dont *completely* crash. ;)
-    let xOffset = 15;
-    let yOffset = 15;
-    let xPos = 350;
-    let yPos = -75;
     xPos += xOffset;
     yPos += yOffset;
     if (xPos > screen.width-175){
