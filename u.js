@@ -1,8 +1,8 @@
 async function main() {
-let xOffset = 15;
-let yOffset = 15;
-let xPos = 350;
-let yPos = -75;
+var xOffset = 15;
+var yOffset = 15;
+var xPos = 350;
+var yPos = -75;
 
 
 async function bouncy(win) {
